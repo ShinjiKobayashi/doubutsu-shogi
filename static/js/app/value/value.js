@@ -4,7 +4,9 @@
 
 angular.module('myApp')
     .value('currentData', {
+        // What times to move
         'times':0,
+        // current map data
         'map': [
             [{
                 'isEmpty': false,
