@@ -8,7 +8,7 @@ angular.module("myApp")
         $scope.getClass = function(item){
             console.log(item);
             return item.isOpp == true ? 'piece_opponent' : 'piece'
-        }
+        };
 
         $scope.debug = function(item){
             console.log(item);
@@ -16,3 +16,22 @@ angular.module("myApp")
         };
     }]);
 
+angular.module('myApp')
+    .controller("ButtonCtrl", ["$scope", "currentData", "algoData", function($scope, currentData, algoData){
+        $scope.onclick = function() {
+            console.log("onclicked");
+            if(algoData.first == null){
+                algoData.first = new testA();
+                algoData.second = new tetB();
+            }
+
+            if(currentData.times % 2){
+                //
+                algoData.second.next();
+            }else{
+                algoData.first.next();
+            }
+        }
+
+
+    }]);

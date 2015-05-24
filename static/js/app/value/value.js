@@ -62,3 +62,9 @@ angular.module('myApp')
             }]
         ]
     });
+
+angular.module('myApp')
+    .value('algoData', {
+        "first": null,
+        "second": null
+    });
