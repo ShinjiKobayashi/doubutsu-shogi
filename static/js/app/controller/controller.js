@@ -19,19 +19,21 @@ angular.module("myApp")
 angular.module('myApp')
     .controller("ButtonCtrl", ["$scope", "currentData", "algoData", function($scope, currentData, algoData){
         $scope.onclick = function() {
-            console.log("onclicked");
             if(algoData.first == null){
+                console.log("initialize data");
                 algoData.first = new testA();
-                algoData.second = new tetB();
+                algoData.second = new testB();
             }
 
-            if(currentData.times % 2){
-                //
+            if(currentData.times % 2 == 1){
+                console.log("call second");
                 algoData.second.next();
             }else{
+                console.log("call first");
                 algoData.first.next();
             }
-        }
+            currentData.times++;
+        };
 
 
     }]);
