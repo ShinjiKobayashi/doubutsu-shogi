@@ -34,6 +34,4 @@ angular.module('myApp')
             }
             currentData.times++;
         };
-
-
     }]);

@@ -8,58 +8,10 @@ angular.module('myApp')
         'times':0,
         // current map data
         'map': [
-            [{
-                'isEmpty': false,
-                'img_src': "/static/img/elephant.png",
-                'isOpp': true
-            }, {
-                'isEmpty': false,
-                'img_src': "/static/img/lion.png",
-                'isOpp': true
-            }, {
-                'isEmpty': false,
-                'img_src': "/static/img/giraffe.png",
-                'isOpp': true
-            }],
-            [{
-                'isEmpty': true,
-                'img_src': "",
-                'isOpp': false
-            }, {
-                'isEmpty': false,
-                'img_src': "/static/img/chick.png",
-                'isOpp': true
-            }, {
-                'isEmpty': true,
-                'img_src': "",
-                'isOpp': false
-            }],
-            [{
-                'isEmpty': true,
-                'img_src': "",
-                'isOpp': false
-            }, {
-                'isEmpty': false,
-                'img_src': "/static/img/chick.png",
-                'isOpp': false
-            }, {
-                'isEmpty': true,
-                'img_src': "",
-                'isOpp': false
-            }],
-            [{
-                'isEmpty': false,
-                'img_src': "/static/img/giraffe.png",
-                'isOpp': false
-            }, {
-                'isEmpty': false,
-                'img_src': "/static/img/lion.png",
-                'isOpp': false
-            }, {
-                'isEmpty': false,
-                'img_src': "/static/img/elephant.png",
-                'isOpp': false
-            }]
+            [GIRAFFE_OPP, LION_OPP, ELEPHANT_OPP],
+            [EMPTY, COOK_OPP, EMPTY],
+            [EMPTY, COOK, EMPTY],
+            [ELEPHANT, LION, GIRAFFE]
         ]
     });
 
@@ -68,3 +20,60 @@ angular.module('myApp')
         "first": null,
         "second": null
     });
+
+/*
+ [
+ [{
+ 'isEmpty': false,
+ 'img_src': "/static/img/elephant.png",
+ 'isOpp': true
+ }, {
+ 'isEmpty': false,
+ 'img_src': "/static/img/lion.png",
+ 'isOpp': true
+ }, {
+ 'isEmpty': false,
+ 'img_src': "/static/img/giraffe.png",
+ 'isOpp': true
+ }],
+ [{
+ 'isEmpty': true,
+ 'img_src': "",
+ 'isOpp': false
+ }, {
+ 'isEmpty': false,
+ 'img_src': "/static/img/chick.png",
+ 'isOpp': true
+ }, {
+ 'isEmpty': true,
+ 'img_src': "",
+ 'isOpp': false
+ }],
+ [{
+ 'isEmpty': true,
+ 'img_src': "",
+ 'isOpp': false
+ }, {
+ 'isEmpty': false,
+ 'img_src': "/static/img/chick.png",
+ 'isOpp': false
+ }, {
+ 'isEmpty': true,
+ 'img_src': "",
+ 'isOpp': false
+ }],
+ [{
+ 'isEmpty': false,
+ 'img_src': "/static/img/giraffe.png",
+ 'isOpp': false
+ }, {
+ 'isEmpty': false,
+ 'img_src': "/static/img/lion.png",
+ 'isOpp': false
+ }, {
+ 'isEmpty': false,
+ 'img_src': "/static/img/elephant.png",
+ 'isOpp': false
+ }]
+ ]
+ */

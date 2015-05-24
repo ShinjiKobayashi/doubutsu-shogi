@@ -13,9 +13,9 @@
     <table class="table table-bordered" style="width: 300px">
         <!-- table body -->
         <tbody>
-        <tr align="center" ng-repeat="item in items">
-            <td ng-repeat="piece in item">
-                <img ng-show='!piece.isEmpty' src="{{piece.img_src}}" ng-class="(piece.isOpp) ? 'piece_opponent' : 'piece'" />
+        <tr align="center" ng-repeat="item in items track by $index">
+            <td ng-repeat="p in item track by $index">
+                <img ng-show='!p.isEmpty' src="{{p.img_src}}" ng-class="(p.isOpp) ? 'piece_opponent' : 'piece'" />
             </td>
         </tr>
 <!--
@@ -34,6 +34,7 @@
 <script src="static/js/angular/angular.min.js"></script>
 <script src="static/js/angular/angular-route.min.js"></script>
 <!-- load test script. -->
+<script src="static/js/app/value/pieces.js"></script>
 <script src="static/js/app/solver/testA.js"></script>
 <script src="static/js/app/solver/testB.js"></script>
 <script src="static/js/app/app.js"></script>
