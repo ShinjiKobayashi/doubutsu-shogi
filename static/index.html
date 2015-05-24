@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Application Name</title>
+    <link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="static/css/main.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<div class="col-lg-6" ng-controller="MapCtrl">
+    <table class="table table-bordered" style="width: 300px">
+        <!-- table body -->
+        <tbody>
+        <tr align="center" ng-repeat="item in items">
+            <td ng-repeat="piece in item">
+                <img ng-show='!piece.isEmpty' src="{{piece.img_src}}" ng-class="(piece.isOpp) ? 'piece_opponent' : 'piece'" />
+            </td>
+        </tr>
+<!--
+            <td ng-show="debug(item);"></td>
+            <td><img ng-show='!item[0].isEmpty' src="{{item[0].img_src}}" ng-class="(item[0].isOpp) ? 'piece_opponent' : 'piece'" /></td>
+            <td><img ng-show='!item[1].isEmpty' src="{{item[1].img_src}}" ng-class="(item[1].isOpp) ? 'piece_opponent' : 'piece'" /></td>
+            <td><img ng-show='!item[2].isEmpty' src="{{item[2].img_src}}" ng-class="(item[2].isOpp) ? 'piece_opponent' : 'piece'" /></td>
+-->
+
+        </tbody>
+    </table>
+</div>
+
+
+<script src="static/js/jquery/jquery-2.1.3.min.js"></script>
+<script src="static/js/bootstrap/bootstrap.min.js"></script>
+<script src="static/js/angular/angular.min.js"></script>
+<script src="static/js/angular/angular-route.min.js"></script>
+<script src="static/js/app/app.js"></script>
+<script src="static/js/app/controller/controller.js"></script>
+</body>
+</html>
