@@ -2,7 +2,7 @@
  * Created by skobayashi on 15/02/13.
  */
 
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ui.bootstrap']);
 
 /**
  * load script file

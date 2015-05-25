@@ -2,6 +2,29 @@
  * Created by skobayashi1 on 15/05/22.
  */
 
+angular.module('myApp')
+    .controller("ModalCtrl", ["$scope", function($scope){
+
+    }]);
+
+
+angular.module("myApp")
+    .controller('NavbarCtrl', ["$scope", "$modal", function($scope, $modal){
+        $scope.uploadAlgo = function(){
+            openModal();
+        };
+
+        function openModal(size){
+            var modalInstance = $modal.open({
+                templateUrl: 'modalContent.html',
+                controller: 'ModalCtrl',
+                size: size,
+                backdropClass: 'modal-backdrop',
+            });
+        }
+    }]);
+
+
 angular.module("myApp")
     .controller('MapCtrl', ['$scope', 'currentData', function($scope, currentData) {
         $scope.items = currentData.map;
@@ -14,6 +37,7 @@ angular.module("myApp")
             console.log(item);
             return false;
         };
+
     }]);
 
 angular.module('myApp')
@@ -27,11 +51,13 @@ angular.module('myApp')
 
             if(currentData.times % 2 == 1){
                 console.log("call second");
-                algoData.second.next();
+                algoData.second.next(angular.copy(currentData.map));
             }else{
                 console.log("call first");
-                algoData.first.next();
+                algoData.first.next(angular.copy(currentData.map));
             }
             currentData.times++;
         };
     }]);
+
+
