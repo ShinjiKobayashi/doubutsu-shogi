@@ -69,6 +69,8 @@
 <script src="static/js/bootstrap/bootstrap.min.js"></script>
 <script src="static/js/angular/angular.min.js"></script>
 <script src="static/js/angular/angular-route.min.js"></script>
+<script src="static/js/angular/ng-file-upload-shim.min.js"></script>
+<script src="static/js/angular/ng-file-upload.min.js"></script>
 <!-- TODO: load ui.bootstrap -->
 <script src="static/js/angular/ui-bootstrap-tpls-0.13.0.min.js"></script>
 <!-- load test script. -->
@@ -86,7 +88,11 @@
         <h3 class="modal-title">JS File Upload</h3>
     </div>
     <div class="modal-body">
-        <h3>TODO: settings upload file</h3>
+        <div ng-controller="FileCtrl">
+            <div class="btn btn-primary" ngf-select ng-model="files" ngf-multiple="multiple">
+                Select File
+            </div>
+        </div>
     </div>
     <div class="modal-footer" style="text-align: center">
         <button class="btn btn-warning btn-modal-footer" ng-click="ok()">

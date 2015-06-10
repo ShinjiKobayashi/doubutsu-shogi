@@ -40,6 +40,33 @@ angular.module("myApp")
 
     }]);
 
+angular.module("myApp")
+    .controller('FileCtrl', ['$scope', 'Upload', function ($scope, Upload) {
+    $scope.$watch('files', function () {
+        console.log("upload call;", $scope.files);
+        $scope.upload($scope.files);
+    });
+
+    $scope.upload = function (files) {
+        if (files && files.length) {
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                Upload.upload({
+                    url: 'upload/file',
+                    fields: {'username': $scope.username},
+                    file: file
+                }).progress(function (evt) {
+                    var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                    console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+                }).success(function (data, status, headers, config) {
+                    console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+                });
+            }
+        }
+    };
+}]);
+
+
 angular.module('myApp')
     .controller("ButtonCtrl", ["$scope", "currentData", "algoData", function($scope, currentData, algoData){
         $scope.onclick = function() {
